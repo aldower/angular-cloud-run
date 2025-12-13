@@ -29,9 +29,6 @@ jobs:
         with:
           credentials_json: ${{ secrets.SA_GCP_DEV }}
 
-      - name: Set up Cloud SDK
-        uses: 'google-github-actions/setup-gcloud@v2'
-
       - name: Docker Auth
         run: gcloud auth configure-docker ${{ env.GCP_REGION }}-docker.pkg.dev
 
@@ -55,10 +52,6 @@ jobs:
         uses: 'google-github-actions/auth@v3'
         with:
           credentials_json: ${{ secrets.SA_GCP_DEV }}
-
-      - name: Set up Cloud SDK
-        uses: 'google-github-actions/setup-gcloud@v2'
-
 
       - name: Deploy to Cloud Run
         run: |
