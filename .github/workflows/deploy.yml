@@ -7,10 +7,9 @@ on:
 
 env:
   GCP_PROJECT_ID: "hale-monument-477117-k8"
-  GCP_REGION: "your-gcp-region" # TODO: Replace with your GCP region
-  ARTIFACT_REGISTRY_REPO: "your-artifact-registry-repo" # TODO: Replace with your Artifact Registry repo name
-  CLOUD_RUN_SERVICE_NAME: "gemini-angular-app" # TODO: Replace with your Cloud Run service name
-
+  GCP_REGION: "us-central1"
+  ARTIFACT_REGISTRY_REPO: "cna-registry" 
+  CLOUD_RUN_SERVICE_NAME: "gemini-angular-app"
 jobs:
   deploy:
     runs-on: ubuntu-latest
