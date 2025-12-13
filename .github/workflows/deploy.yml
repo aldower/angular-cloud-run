@@ -11,7 +11,7 @@ env:
   ARTIFACT_REGISTRY_REPO: "cna-registry" 
   CLOUD_RUN_SERVICE_NAME: "gemini-angular-app"
 jobs:
-  deploy: 
+  dev: 
     environment: dev
     runs-on: ubuntu-latest
     permissions:
@@ -51,6 +51,7 @@ jobs:
 
   staging: 
     environment: staging
+    needs: dev
     runs-on: ubuntu-latest
     permissions:
       contents: 'read'
