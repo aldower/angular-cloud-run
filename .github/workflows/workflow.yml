@@ -1,0 +1,12 @@
+name: Deploy to Google Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  GCP_PROJECT_ID: "hale-monument-477117-k8"
+  GCP_REGION: "us-central1"
+  ARTIFACT_REGISTRY_REPO: "cna-registry" 
+  CLOUD_RUN_SERVICE_NAME: "gemini-angular-app"
