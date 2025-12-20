@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   workflow:
-    uses: cloudnative-aldotrucios/dso-templates/.github/workflows/angular.yaml@main
+    uses: aldower/dso-templates/.github/workflows/angular.yaml@main
     with:
       gcp_project_id: "hale-monument-477117-k8"
       gcp_artifact_repo: "cna-registry"
