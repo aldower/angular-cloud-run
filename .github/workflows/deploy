@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  GCP_PROJECT_ID: "hale-monument-477117-k8"
+  GCP_PROJECT_ID: "gh-proj-devsecops"
   GCP_REGION: "us-central1"
   ARTIFACT_REGISTRY_REPO: "cna-registry" 
   CLOUD_RUN_SERVICE_NAME: "gemini-angular-app"
@@ -26,7 +26,9 @@ jobs:
         id: auth
         uses: 'google-github-actions/auth@v3'
         with:
-          credentials_json: ${{ secrets.SA_GCP_DEV }}       
+          workload_identity_provider: projects/997415445311/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+          service_account: github-actions-sa@gh-proj-devsecops.iam.gserviceaccount.com
+          #credentials_json: ${{ secrets.SA_GCP_DEV }}       
 
       - name: Set up Cloud SDK
         uses: 'google-github-actions/setup-gcloud@v2'
